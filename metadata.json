@@ -1,0 +1,5 @@
+{
+  "name": "Kohartist",
+  "description": "A direct-to-artist payment platform where fans can scan QR codes to tip or pay performers instantly via Stripe.",
+  "requestFramePermissions": ["camera"]
+}

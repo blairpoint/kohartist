@@ -1,0 +1,41 @@
+{
+  "entities": {
+    "Artist": {
+      "title": "Artist",
+      "description": "An artist profile for receiving tips and payments.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "The Firebase Auth UID of the artist." },
+        "name": { "type": "string", "description": "The display name of the artist." },
+        "bio": { "type": "string", "description": "A short bio of the artist." },
+        "photoUrl": { "type": "string", "description": "Profile picture URL." },
+        "stripeAccountId": { "type": "string", "description": "The Stripe account ID for direct payments (optional for now)." },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "name"]
+    },
+    "Transaction": {
+      "title": "Transaction",
+      "description": "A record of a payment made to an artist.",
+      "type": "object",
+      "properties": {
+        "artistId": { "type": "string", "description": "The UID of the artist who received the payment." },
+        "amount": { "type": "number", "description": "The amount paid in USD." },
+        "status": { "type": "string", "enum": ["pending", "completed", "failed"] },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "fanName": { "type": "string", "description": "Optional name of the fan who paid." }
+      },
+      "required": ["artistId", "amount", "status", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/artists/{artistId}": {
+      "schema": "Artist",
+      "description": "Artist profiles."
+    },
+    "/transactions/{transactionId}": {
+      "schema": "Transaction",
+      "description": "Payment records."
+    }
+  }
+}

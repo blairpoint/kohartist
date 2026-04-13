@@ -1,0 +1,27 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper Functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    function isValidArtist(data) {
+      return data.uid is string && data.uid.size() > 0 &&
+             data.name is string && data.name.size() > 0 && data.name.size() < 100;
+    }
+
+    match /artists/{artistId} {
+      allow read: if true; // Profiles are public so fans can see them
+      allow create: if isOwner(artistId) && isValidArtist(request.resource.data);
+      allow update: if isOwner(artistId) && isValidArtist(request.resource.data);
+    }
+
+    match /transactions/{transactionId} {
+      allow read: if isAuthenticated() && (resource.data.artistId == request.auth.uid);
+      allow create: if true; // Fans can create transactions (even if unauthenticated)
+    }
+  }
+}
