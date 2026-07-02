@@ -1,9 +1,3 @@
-To match the solid black background theme from your `kohartist-web.png` image on the rest of the layout, you should change the container and header background colors to pure black (`#000000`) and replace the dark blue gradient background.
-
-Here is your updated CSS with the card backgrounds set to completely black, accented with thin subtle border lines to keep the clean sections visible:
-
-```css
-/* Custom App-Wide Resets & Dark Theme Palette */
 body {
   display: flex;
   justify-content: center;
@@ -139,5 +133,3 @@ body {
 .pricing-table-wrapper {
   background-color: transparent;
 }
-
-```
