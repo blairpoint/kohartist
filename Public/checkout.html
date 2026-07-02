@@ -1,35 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Buy cool new product</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stubborn Records — Pay An Artist</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://js.stripe.com/dahlia/stripe.js"></script>
+    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
   </head>
   <body>
-    <section>
-      <div class="product">
-        <img src="https://i.imgur.com/EHyR2nP.png" alt="The cover of Stubborn Attachments" />
-        <div class="description">
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Select a Plan</title>
-    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-</head>
-<body>
-    <h1>Choose Your Kohartist Plan</h1>
-    
-    <stripe-pricing-table 
-        pricing-table-id="prctbl_1TooevKEbwiqQxArL7BSrTgH"
-        publishable-key="pk_live_51THowuKEbwiqQxArUJlzPJ8048cR5JccpPSR65IksNzHbVLGY3DMTcCdAYNaWjGx1pbedh55RoUo3ddSq1V9awFr001kkOyNaq">
-    </stripe-pricing-table>
-</body>
-</html>
+    <main class="checkout-container">
+      
+      <header class="merchant-header">
+        <span class="badge">PAY-TO-ARTIST</span>
+        <p class="subtitle">MERCHANT ARTIST RECEIVER</p>
+        <h1 class="merchant-title">Stubborn Records</h1>
+        <div class="artist-id">ID: acct_1NJ2B3CDEF456</div>
+      </header>
+
+      <section class="checkout-card">
+        
+        <div class="product-spotlight">
+          <img class="product-thumbnail" src="https://i.imgur.com/EHyR2nP.png" alt="The cover of Stubborn Attachments" />
+          <div class="product-details">
+            <span class="meta-label">ITEM TO PURCHASE</span>
+            <h2 class="product-name">Stubborn Attachments Book</h2>
+            <p class="product-subtext">Stripe Connect Destination Charge Enabled</p>
+          </div>
         </div>
-      </div>
-      <form action="/create-checkout-session" method="POST">
-        <button type="submit" id="checkout-button">Checkout</button>
-      </form>
-    </section>
+
+        <div class="pricing-table-wrapper">
+          <span class="meta-label inline-spacing">DYNAMIC AMOUNT ($ USD)</span>
+          <stripe-pricing-table 
+              pricing-table-id="prctbl_1TooevKEbwiqQxArL7BSrTgH" 
+              publishable-key="pk_live_51THowuKEbwiqQxArUJlzPJ8048cR5JccpPSR65IksNzHbVLGY3DMTcCdAYNaWjGx1pbedh55RoUo3ddSq1V9awFr001kkOyNaq">
+          </stripe-pricing-table>
+        </div>
+
+      </section>
+    </main>
   </body>
 </html>
