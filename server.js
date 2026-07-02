@@ -9,7 +9,7 @@ const YOUR_DOMAIN = 'https://kohartist.fly.dev';
 
 // FIX: Root route handler to serve your main landing page or redirect to it
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/public/checkout.html');
+  res.sendFile(__dirname + '/Public/checkout.html');
 });
 
 app.post('/create-checkout-session', async (req, res) => {
