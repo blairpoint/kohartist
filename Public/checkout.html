@@ -10,8 +10,21 @@
       <div class="product">
         <img src="https://i.imgur.com/EHyR2nP.png" alt="The cover of Stubborn Attachments" />
         <div class="description">
-          <h3>Stubborn Attachments</h3>
-          <h5>$20.00</h5>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select a Plan</title>
+    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+</head>
+<body>
+    <h1>Choose Your Kohartist Plan</h1>
+    
+    <stripe-pricing-table 
+        pricing-table-id="prctbl_1TooevKEbwiqQxArL7BSrTgH"
+        publishable-key="pk_live_51THowuKEbwiqQxArUJlzPJ8048cR5JccpPSR65IksNzHbVLGY3DMTcCdAYNaWjGx1pbedh55RoUo3ddSq1V9awFr001kkOyNaq">
+    </stripe-pricing-table>
+</body>
+</html>
         </div>
       </div>
       <form action="/create-checkout-session" method="POST">
