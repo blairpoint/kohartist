@@ -1,3 +1,8 @@
+To match the solid black background theme from your `kohartist-web.png` image on the rest of the layout, you should change the container and header background colors to pure black (`#000000`) and replace the dark blue gradient background.
+
+Here is your updated CSS with the card backgrounds set to completely black, accented with thin subtle border lines to keep the clean sections visible:
+
+```css
 /* Custom App-Wide Resets & Dark Theme Palette */
 body {
   display: flex;
@@ -17,20 +22,20 @@ body {
 .checkout-container {
   width: 100%;
   max-width: 480px;
-  background-color: #121826; /* Dark interface card backing */
+  background-color: #000000; /* Pure black card backing */
   border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Slightly brighter border to pop against black background */
 }
 
 /* Top Branding Profile Block */
 .merchant-header {
-  background: linear-gradient(180deg, #1a153b 0%, #121826 100%);
+  background: #000000; /* Replaced blue/purple gradient with solid pure black */
   padding: 32px 24px 20px 24px;
   text-align: center;
   position: relative;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .merchant-header .badge {
@@ -63,26 +68,27 @@ body {
 
 .merchant-header .artist-id {
   display: inline-block;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.05);
   color: #9ca3af;
   font-family: monospace;
   font-size: 12px;
   padding: 6px 14px;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Interior Core Container Layout */
 .checkout-card {
   padding: 24px;
+  background-color: #000000; /* Pure black core container */
 }
 
 /* Integrated Embedded Product Row Element */
 .product-spotlight {
   display: flex;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.04); /* Subtly raised container background for item description */
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 16px;
   margin-bottom: 24px;
@@ -94,7 +100,7 @@ body {
   object-fit: cover;
   border-radius: 6px;
   margin-right: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
 .product-details {
@@ -129,7 +135,9 @@ body {
   margin: 0;
 }
 
-/* Wrapper wrapper allowing Stripe Embedded Custom Component to scale */
+/* Wrapper allowing Stripe Embedded Custom Component to scale */
 .pricing-table-wrapper {
   background-color: transparent;
 }
+
+```
