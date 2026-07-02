@@ -1,80 +1,135 @@
+/* Custom App-Wide Resets & Dark Theme Palette */
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #242d60;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-  'Helvetica Neue', 'Ubuntu', sans-serif;
-  height: 100vh;
+  background-color: #0b0f19; /* Deep space dark background */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
   margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color: #ffffff;
 }
-section {
-  background: #ffffff;
-  display: flex;
-  flex-direction: column;
-  width: 400px;
-  height: 112px;
-  border-radius: 6px;
-  justify-content: space-between;
-}
-.product {
-  display: flex;
-}
-.description {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-p {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: -0.154px;
-  color: #242d60;
-  height: 100%;
+
+/* Master Grid Wrapper centered on screen */
+.checkout-container {
   width: 100%;
-  padding: 0 20px;
+  max-width: 480px;
+  background-color: #121826; /* Dark interface card backing */
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Top Branding Profile Block */
+.merchant-header {
+  background: linear-gradient(180deg, #1a153b 0%, #121826 100%);
+  padding: 32px 24px 20px 24px;
+  text-align: center;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.merchant-header .badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(99, 102, 241, 0.2);
+  color: #818cf8;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.merchant-header .subtitle {
+  font-size: 11px;
+  color: #9ca3af;
+  letter-spacing: 1.5px;
+  margin: 0 0 6px 0;
+  font-weight: 600;
+}
+
+.merchant-header .merchant-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+}
+
+.merchant-header .artist-id {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #9ca3af;
+  font-family: monospace;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Interior Core Container Layout */
+.checkout-card {
+  padding: 24px;
+}
+
+/* Integrated Embedded Product Row Element */
+.product-spotlight {
   display: flex;
   align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
 }
-img {
+
+.product-thumbnail {
+  width: 56px;
+  height: 64px;
+  object-fit: cover;
   border-radius: 6px;
-  margin: 10px;
-  width: 54px;
-  height: 57px;
+  margin-right: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
-h3,
-h5 {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: -0.154px;
-  color: #242d60;
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.meta-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #6366f1; /* Neon indigo title label accent */
+  margin-bottom: 2px;
+}
+
+.meta-label.inline-spacing {
+  display: block;
+  margin-bottom: 12px;
+  color: #9ca3af;
+}
+
+.product-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 2px 0;
+}
+
+.product-subtext {
+  font-size: 12px;
+  color: #9ca3af;
   margin: 0;
 }
-h5 {
-  opacity: 0.5;
-}
-button {
-  height: 36px;
-  background: #556cd6;
-  color: white;
-  width: 100%;
-  font-size: 14px;
-  border: 0;
-  font-weight: 500;
-  cursor: pointer;
-  letter-spacing: 0.6;
-  border-radius: 0 0 6px 6px;
-  transition: all 0.2s ease;
-  box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
-}
-button:hover {
-  opacity: 0.8;
+
+/* Wrapper wrapper allowing Stripe Embedded Custom Component to scale */
+.pricing-table-wrapper {
+  background-color: transparent;
 }
